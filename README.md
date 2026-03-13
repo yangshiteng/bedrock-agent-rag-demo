@@ -74,9 +74,16 @@ copy .env.example .env
 Set these environment variables in `.env`:
 
 - `AWS_REGION`
+- `AWS_PROFILE` (optional, recommended when using named AWS CLI profiles)
 - `BEDROCK_AGENT_ID`
 - `BEDROCK_AGENT_ALIAS_ID`
 - `BEDROCK_SESSION_ID` (optional)
+
+Credential options:
+
+- Personal AWS account: run `aws configure --profile personal`, then set `AWS_PROFILE=personal`
+- Company SSO setup: run `aws sso login --profile your-company-profile`, then set `AWS_PROFILE=your-company-profile`
+- Default local credentials: leave `AWS_PROFILE` empty and let `boto3` use the default credential chain
 
 ## Run The Demo
 
@@ -96,6 +103,13 @@ Multi-question demo script:
 
 ```bash
 python scripts/run_demo.py
+```
+
+Example PowerShell session with a named profile:
+
+```powershell
+$env:AWS_PROFILE="personal"
+python -m src.invoke_agent --question "What policy applies to vendor risk reviews?"
 ```
 
 ## Example Prompts

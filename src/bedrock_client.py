@@ -22,7 +22,8 @@ class BedrockAgentRuntimeGateway:
             read_timeout=60,
             connect_timeout=10,
         )
-        self._client = boto3.client(
+        session = boto3.Session(profile_name=self.config.aws_profile)
+        self._client = session.client(
             service_name="bedrock-agent-runtime",
             region_name=self.config.aws_region,
             config=retry_config,

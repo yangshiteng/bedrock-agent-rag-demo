@@ -12,6 +12,7 @@ class AppConfig:
     aws_region: str
     agent_id: str
     agent_alias_id: str
+    aws_profile: str | None = None
     log_level: str = "INFO"
 
 
@@ -22,6 +23,7 @@ def load_config(dotenv_path: str | None = None) -> AppConfig:
     aws_region = os.getenv("AWS_REGION", "us-east-1")
     agent_id = os.getenv("BEDROCK_AGENT_ID", "").strip()
     agent_alias_id = os.getenv("BEDROCK_AGENT_ALIAS_ID", "").strip()
+    aws_profile = os.getenv("AWS_PROFILE", "").strip() or None
     log_level = os.getenv("LOG_LEVEL", "INFO").strip().upper()
 
     missing = []
@@ -41,6 +43,7 @@ def load_config(dotenv_path: str | None = None) -> AppConfig:
         aws_region=aws_region,
         agent_id=agent_id,
         agent_alias_id=agent_alias_id,
+        aws_profile=aws_profile,
         log_level=log_level,
     )
 
