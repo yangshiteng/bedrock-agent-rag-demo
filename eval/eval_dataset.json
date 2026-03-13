@@ -1,0 +1,46 @@
+[
+  {
+    "id": "qnr-definition",
+    "question": "What is the internal definition of quarterly net revenue?",
+    "expected_keywords": [
+      "quarterly net revenue",
+      "gross sales",
+      "returns",
+      "discounts",
+      "reporting period"
+    ],
+    "grounding_terms": [
+      "finance policy handbook",
+      "internal glossary"
+    ],
+    "sample_answer": "In the finance policy handbook and internal glossary, quarterly net revenue is gross sales for the reporting period minus approved returns and discounts."
+  },
+  {
+    "id": "vendor-risk-policy",
+    "question": "What policy applies to vendor risk reviews?",
+    "expected_keywords": [
+      "vendor risk",
+      "annual review",
+      "critical vendor",
+      "security questionnaire"
+    ],
+    "grounding_terms": [
+      "third-party risk policy",
+      "procurement controls"
+    ],
+    "sample_answer": "Per the third-party risk policy and procurement controls, all critical vendors require an annual review, including a security questionnaire and risk tier reassessment."
+  },
+  {
+    "id": "contingency-calculation",
+    "question": "If a department spent $12,000 with a 10% contingency, what is the total?",
+    "expected_keywords": [
+      "12000",
+      "10%",
+      "13200"
+    ],
+    "grounding_terms": [
+      "budget planning guide"
+    ],
+    "sample_answer": "Using the budget planning guide formula, total spend is 12000 multiplied by 1.10, which equals 13200."
+  }
+]

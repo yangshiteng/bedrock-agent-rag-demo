@@ -1,0 +1,6 @@
+.env
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+eval/latest_eval_report.json
