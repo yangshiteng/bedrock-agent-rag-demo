@@ -132,4 +132,4 @@ Company account:
 
 ## Project-Specific Reminder
 
-This repository still assumes that the Bedrock Agent, alias, Knowledge Base, and action groups are created manually in AWS. This document only covers how your local machine authenticates to AWS when running the code.
+This repository still assumes that the Bedrock Agent, alias, and Knowledge Base are created manually in AWS. This document only covers how your local machine authenticates to AWS when running the code.

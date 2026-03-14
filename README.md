@@ -1,16 +1,16 @@
-# bedrock-agent-business-assistant
+# bedrock-agent-rag-demo
 
-Portfolio-style Python project showing how an application integrates with an existing AWS Bedrock Agent for business knowledge Q&A, retrieval-augmented generation, and tool-assisted reasoning.
+Portfolio-style Python project showing how an application integrates with an existing AWS Bedrock Agent and Knowledge Base for business knowledge Q&A and retrieval-augmented generation.
 
-This repository is designed for interview walkthroughs and realistic architecture discussions. It assumes the Bedrock Agent, Knowledge Base, and action groups are already configured in AWS, and focuses on the application layer that invokes and evaluates the agent.
+This repository is designed for interview walkthroughs and realistic architecture discussions. It assumes the Bedrock Agent and Knowledge Base are already configured in AWS, and focuses on the application layer that invokes and evaluates the agent.
 
 ## Why This Project
 
 This project demonstrates:
 
 - Invoking a Bedrock Agent from Python with `boto3`
-- Designing an application around agent orchestration rather than direct model prompting
-- Explaining how retrieval and action-group tool use work together in a business assistant
+- Designing an application around Bedrock Agent retrieval instead of direct model prompting
+- Demonstrating a Knowledge Base-backed RAG flow through the Bedrock Agent runtime
 - Evaluating RAG-style answers with lightweight, understandable metrics
 - Documenting the real-world constraint that some AWS resources are often configured manually
 
@@ -18,14 +18,14 @@ This project demonstrates:
 
 High-level request flow:
 
-`User -> Application -> Bedrock Agent Runtime -> Agent reasoning -> Knowledge Base retrieval -> Action group tools -> Response`
+`User -> Application -> Bedrock Agent Runtime -> Knowledge Base retrieval -> Response`
 
 Detailed walkthrough: [`architecture/architecture.md`](architecture/architecture.md)
 
 ## Repository Layout
 
 ```text
-bedrock-agent-business-assistant/
+bedrock-agent-rag-demo/
   README.md
   LICENSE
   RELEASE.md
@@ -47,8 +47,7 @@ You need these existing AWS resources before local execution:
 1. Bedrock Agent
 2. Agent alias that is deployed and active
 3. Bedrock Knowledge Base attached to the agent
-4. At least one action group for tool use scenarios
-5. IAM permissions to call `bedrock-agent-runtime:InvokeAgent`
+4. IAM permissions to call `bedrock-agent-runtime:InvokeAgent`
 
 ## Manual AWS Setup
 
@@ -58,9 +57,8 @@ Summary:
 
 1. Create a Bedrock Agent in the AWS console.
 2. Attach a Knowledge Base containing business documents.
-3. Create an action group for business tools or API-backed operations.
-4. Deploy an agent alias.
-5. Copy `BEDROCK_AGENT_ID` and `BEDROCK_AGENT_ALIAS_ID` into `.env`.
+3. Deploy an agent alias.
+4. Copy `BEDROCK_AGENT_ID` and `BEDROCK_AGENT_ALIAS_ID` into `.env`.
 
 ## Local Setup
 
@@ -118,7 +116,7 @@ More prompts: [`examples/sample_questions.md`](examples/sample_questions.md)
 
 - What is the internal definition of quarterly net revenue?
 - What policy applies to vendor risk reviews?
-- If a department spent $12,000 with a 10% contingency, what is the total?
+- Summarize the approval workflow for non-standard contract terms.
 
 ## Evaluation Approach
 
@@ -145,14 +143,14 @@ Evaluation dataset: [`eval/eval_dataset.json`](eval/eval_dataset.json)
 ## What Makes This Realistic
 
 - The repository does not pretend all AWS resources are created automatically.
-- The code is modular enough for production-style discussion: config, logging, runtime client, invocation flow, tools, and evaluation are separated.
-- The demo includes both retrieval-driven questions and tool-friendly calculation questions.
+- The code is modular enough for production-style discussion: config, logging, runtime client, retrieval invocation flow, and evaluation are separated.
+- The demo is intentionally centered on retrieval-driven business knowledge questions.
 
 ## Limitations
 
 - Evaluation metrics are heuristic and not substitutes for human judgment.
 - Grounding is inferred from keyword overlap rather than citation verification.
-- Action-group behavior depends on how your Bedrock Agent is configured in AWS.
+- Retrieval quality depends on how your Bedrock Knowledge Base is chunked, indexed, and attached to the agent.
 - This repository does not provision cloud resources with Terraform or CloudFormation.
 
 ## Future Improvements

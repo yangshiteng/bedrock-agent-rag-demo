@@ -2,13 +2,13 @@
 
 ## v0.1.0
 
-Initial public portfolio release of `bedrock-agent-business-assistant`.
+Initial public portfolio release of `bedrock-agent-rag-demo`.
 
 Highlights:
 
 - Python application for invoking an existing AWS Bedrock Agent with `boto3`
 - Clear separation of runtime client, configuration, logging, and invocation logic
-- Business knowledge assistant scenario covering agent orchestration, retrieval, and tool use
+- Business knowledge RAG scenario centered on Bedrock Knowledge Base retrieval
 - Lightweight RAG evaluation workflow with sample dataset and unit tests
 - Documentation for manual AWS setup when agent resources are configured outside the repository
 

@@ -19,20 +19,13 @@ This repository does **not** create AWS resources automatically. Complete these 
 3. Ensure your business documents are indexed and queryable.
 4. Confirm retrieval is enabled for the agent.
 
-## Step 3: Create Action Group
-
-1. Open **Action groups** in the agent configuration.
-2. Create an action group for tool use (Lambda/API/function schema).
-3. Define operation schema clearly (inputs/outputs).
-4. Add at least one tool-oriented operation (for example financial calculator or policy lookup).
-
-## Step 4: Deploy Agent Alias
+## Step 3: Deploy Agent Alias
 
 1. Build/prepare the latest draft agent version.
 2. Create or update an alias (for example `prod` or `demo`).
 3. Deploy the alias so it can be invoked via runtime API.
 
-## Step 5: Get `AGENT_ID` and `AGENT_ALIAS_ID`
+## Step 4: Get `AGENT_ID` and `AGENT_ALIAS_ID`
 
 1. Copy the agent ID from the Bedrock Agent details page.
 2. Copy the alias ID from the alias details page.
@@ -45,5 +38,4 @@ This repository does **not** create AWS resources automatically. Complete these 
 
 - You can see an active agent alias in Bedrock console.
 - Knowledge Base is attached and queryable.
-- Action group is configured and enabled.
 - Your IAM identity can call `bedrock-agent-runtime:InvokeAgent`.

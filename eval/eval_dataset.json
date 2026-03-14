@@ -31,16 +31,19 @@
     "sample_answer": "Per the third-party risk policy and procurement controls, all critical vendors require an annual review, including a security questionnaire and risk tier reassessment."
   },
   {
-    "id": "contingency-calculation",
-    "question": "If a department spent $12,000 with a 10% contingency, what is the total?",
+    "id": "contract-terms-workflow",
+    "question": "Summarize the approval workflow for non-standard contract terms.",
     "expected_keywords": [
-      "12000",
-      "10%",
-      "13200"
+      "non-standard contract terms",
+      "legal review",
+      "procurement",
+      "business owner",
+      "approval"
     ],
     "grounding_terms": [
-      "budget planning guide"
+      "contract approval policy",
+      "legal escalation standard"
     ],
-    "sample_answer": "Using the budget planning guide formula, total spend is 12000 multiplied by 1.10, which equals 13200."
+    "sample_answer": "According to the contract approval policy and legal escalation standard, non-standard contract terms require business owner justification, procurement review, legal review, and final approval before execution."
   }
 ]

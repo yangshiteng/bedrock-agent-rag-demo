@@ -1,12 +1,12 @@
 # Sample Questions
 
-Use these prompts to demonstrate agent reasoning, retrieval, and tool use.
+Use these prompts to demonstrate retrieval over a business Knowledge Base through Bedrock Agent.
 
 ## Core Interview Prompts
 
 - What is the internal definition of quarterly net revenue?
 - What policy applies to vendor risk reviews?
-- If a department spent $12,000 with a 10% contingency, what is the total?
+- Summarize the approval workflow for non-standard contract terms.
 
 ## Additional Prompts
 

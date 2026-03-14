@@ -16,7 +16,7 @@ from src.logging_config import configure_logging
 DEFAULT_QUESTIONS = [
     "What is the internal definition of quarterly net revenue?",
     "What policy applies to vendor risk reviews?",
-    "If a department spent $12,000 with a 10% contingency, what is the total?",
+    "Summarize the approval workflow for non-standard contract terms.",
 ]
 
 
