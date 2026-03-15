@@ -31,6 +31,7 @@ bedrock-agent-rag-demo/
   RELEASE.md
   .env.example
   requirements.txt
+  streamlit_app.py
   src/
   eval/
   examples/
@@ -84,6 +85,29 @@ Credential options:
 - Default local credentials: leave `AWS_PROFILE` empty and let `boto3` use the default credential chain
 
 ## Run The Demo
+
+### Web Demo
+
+Start the FastAPI backend:
+
+```bash
+uvicorn src.api:app --reload
+```
+
+Start the Streamlit frontend in a second terminal:
+
+```bash
+streamlit run streamlit_app.py
+```
+
+The Streamlit app defaults to `http://localhost:8000` and gives you:
+
+- a chat-style UI for Bedrock Agent Q&A
+- backend health and configuration status
+- reusable session continuity across turns
+- one-click sample prompts for your Knowledge Base demo
+
+### CLI Options
 
 Single question:
 
@@ -143,7 +167,7 @@ Evaluation dataset: [`eval/eval_dataset.json`](eval/eval_dataset.json)
 ## What Makes This Realistic
 
 - The repository does not pretend all AWS resources are created automatically.
-- The code is modular enough for production-style discussion: config, logging, runtime client, retrieval invocation flow, and evaluation are separated.
+- The code is modular enough for production-style discussion: config, logging, runtime client, service layer, web API, UI, and evaluation are separated.
 - The demo is intentionally centered on retrieval-driven business knowledge questions.
 
 ## Limitations

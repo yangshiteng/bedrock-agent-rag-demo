@@ -7,6 +7,7 @@ Initial public portfolio release of `bedrock-agent-rag-demo`.
 Highlights:
 
 - Python application for invoking an existing AWS Bedrock Agent with `boto3`
+- FastAPI backend and Streamlit frontend for browser-based RAG demos
 - Clear separation of runtime client, configuration, logging, and invocation logic
 - Business knowledge RAG scenario centered on Bedrock Knowledge Base retrieval
 - Lightweight RAG evaluation workflow with sample dataset and unit tests

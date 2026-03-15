@@ -1,1 +1,1 @@
-"""Core application package for Bedrock Agent invocation demo."""
+"""Core application package for the Bedrock Agent RAG demo."""
